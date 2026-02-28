@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Medicines</h2>
+<form method="post">
+    <input type="text" name="med_name" placeholder="Medicine Name" required>
+    <input type="time" name="med_time" required>
+    <button type="submit">Add</button>
+</form>
+<ul>
+    {% for name, time in meds %}
+    <li>{{ name }} - {{ time }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
